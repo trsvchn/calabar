@@ -118,5 +118,5 @@ class InstallPyTorch(Install):
             self._pip_install(packages)  # Installing PyTorch and torchvision
 
 
-def test_import():
+def testimport():
     return 42
