@@ -73,7 +73,7 @@ class InstallPyTorch(Install):
     def _get_user_input(self) -> str:
         return str(input())
 
-    def _check_version(self, version: str) -> 0:
+    def _check_version(self, version: str) -> None:
         """
         Check the correctness of user specified version.
         :param version: string version of PyTorch. Recommended version is 0.4.1.
@@ -91,16 +91,12 @@ class InstallPyTorch(Install):
                     if confirm == 'y':
                         self.accelerator = 'cu' + '91'
                         _ = False
-                        return 0
                     elif confirm == 'n':
                         self.install = False
                         logging.info('Installation canceled!')
                         _ = False
-                        return 0
-        else:
-            return 0
 
-    def __call__(self, version: str = None, gpu: bool = True) -> 0:
+    def __call__(self, version: str = None, gpu: bool = True) -> None:
         """
 
         :param version:
@@ -123,7 +119,7 @@ class InstallPyTorch(Install):
             pytorch = f'{self.link}{self.accelerator}/{pytorch_wheel}'
             packages = [pytorch, 'torchvision']
             self._pip_install(packages)  # Installing PyTorch and torchvision
-        return 0
+
 
 def testimport():
     return 42

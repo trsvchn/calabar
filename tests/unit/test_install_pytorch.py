@@ -32,16 +32,15 @@ def test_check_version(monkeypatch, install_pytorch, version, confirmation, inst
         m.setattr(builtins, 'input', input_path)
         assert install_pytorch.accelerator == DEFAULT_ACCELERATOR
         assert install_pytorch.install is True
-        out = install_pytorch._check_version(version)
+        assert install_pytorch._check_version(version) is None
         assert install_pytorch.install is install
         assert install_pytorch.accelerator == cuda
-        assert out == 0
 
 
 @pytest.mark.skip(reason='Performs installation')
 def test_install_pytorch_default(install_pytorch):
     """Test default PyTorch 0.4.1 installation with CUDA support"""
-    assert install_pytorch() == 0
+    assert install_pytorch() is None
 
 
 @pytest.mark.skip(reason='Performs too much installs')
@@ -59,5 +58,5 @@ def test_call_install_pytorch(monkeypatch, install_pytorch, version, gpu, confir
     with monkeypatch.context() as m:
         assert install_pytorch.install is True
         m.setattr(builtins, 'input', input_path)
-        assert install_pytorch(version, gpu) == 0
+        assert install_pytorch(version, gpu) is None
         assert install_pytorch.install is install
