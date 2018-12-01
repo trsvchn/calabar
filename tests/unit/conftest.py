@@ -3,7 +3,7 @@ import pytest
 
 sys.path.append('.')  # for pytest on automatic testing stage
 
-from easycolab.install import Install
+from easycolab.install import Install, InstallPyTorch
 
 
 DEFAULT_ACCELERATOR = 'cpu'
@@ -15,16 +15,16 @@ TEST_PACKAGE_VALID = ['pip', 'pip']
 TEST_PACKAGE_INVALID_TYPE = 'foo'
 TEST_PACKAGE_INVALID = ['foo', 'bar']
 
-
-
+DEFAULT_PYTORCH_VERSION = '0.4.1'
+PYTORCH_LINK = 'http://download.pytorch.org/whl/'
 
 @pytest.fixture
-def default_install():
-    """Returns a Default install"""
+def install():
+    """Default installation"""
     return Install()
 
 
 @pytest.fixture
-def pytorch_install():
-    """Returns a Default install"""
-    return Install()
+def install_pytorch():
+    """Default PyTorch installation"""
+    return InstallPyTorch()

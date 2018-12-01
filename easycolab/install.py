@@ -66,11 +66,14 @@ class InstallPyTorch(Install):
 
     def __init__(self):
         super(InstallPyTorch, self).__init__()
-        self.link = f'http://download.pytorch.org/whl/{self.accelerator}/'
+        self.link = f'http://download.pytorch.org/whl/'
         self.default_version = '0.4.1'
         self.install = True
 
-    def _check_version(self, version: str) -> None:
+    def _get_user_input(self) -> str:
+        return str(input())
+
+    def _check_version(self, version: str) -> 0:
         """
         Check the correctness of user specified version.
         :param version: string version of PyTorch. Recommended version is 0.4.1.
@@ -83,17 +86,21 @@ class InstallPyTorch(Install):
             _ = True
             while _:
                 logging.warning('Install this version anyway? Type "y" to continue installation or "n" to cancel:')
-                confirm = input()
+                confirm = self._get_user_input()
                 if confirm:
                     if confirm == 'y':
                         self.accelerator = 'cu' + '91'
                         _ = False
+                        return 0
                     elif confirm == 'n':
                         self.install = False
                         logging.info('Installation canceled!')
                         _ = False
+                        return 0
+        else:
+            return 0
 
-    def __call__(self, version: str = None, gpu: bool = True):
+    def __call__(self, version: str = None, gpu: bool = True) -> 0:
         """
 
         :param version:
@@ -113,10 +120,10 @@ class InstallPyTorch(Install):
             self._set_platform()
             pytorch_wheel = f'torch-{version}-{self.platform}-linux_x86_64.whl'  # setting PyTorch wheel
             logging.info(f'Downloading {pytorch_wheel} from {self.link}\n...')
-            pytorch = f'{self.link}{pytorch_wheel}'
+            pytorch = f'{self.link}{self.accelerator}/{pytorch_wheel}'
             packages = [pytorch, 'torchvision']
             self._pip_install(packages)  # Installing PyTorch and torchvision
-
+        return 0
 
 def testimport():
     return 42
