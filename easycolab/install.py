@@ -14,14 +14,16 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 class Install:
 
     def __init__(self):
-        self.platform = None
         self.accelerator = 'cpu'  # default is CPU
+        self.platform = None
+        self.cuda_version = None
+        self.nvidia_device = '/dev/nvidia0'
 
     def _set_cuda_version(self) -> None:
         """
         Set CUDA version.
         """
-        is_cuda = exists('/dev/nvidia0')
+        is_cuda = exists(self.nvidia_device)
         assert is_cuda, "No GPU detected. Please change runtime type to 'GPU':\
                          \nRuntime -> Change runtime type -> Hardware accelerator -> GPU"
 
@@ -48,17 +50,17 @@ class Install:
         """
         assert isinstance(packages, list), 'input packages is not a list! Please, provide packages as list of str'
 
-        cmd = f'pip install -q " ".join({packages})'
+        cmd = f'pip install -q {" ".join(packages)}'
         installation_output = subprocess.call(cmd, shell=True)  # expecting for 0
 
         if installation_output == 0:
-            logging.info(f'The following packages were installed successfully: " ".join({packages})')
+            logging.info(f'The following packages were installed successfully: {" ".join(packages)}')
         else:
             logging.critical('Error occurred during installation!')
             logging.info(f'To get full error message, run this command in next cell:\n###\n!{cmd}\n###')  # TODO: refactor!!
 
 
-class InstallPytorch(Install):
+class InstallPyTorch(Install):
 
     def __init__(self):
         super().__init__()
@@ -78,7 +80,7 @@ class InstallPytorch(Install):
             logging.warning(f'Recommended PyTorch version for CUDA {self.cuda_version} is {self.default_version}')
             _ = True
             while _:
-                logging.warning('Install this version anyway? Type "y" to continue installation "n" to cancel:')
+                logging.warning('Install this version anyway? Type "y" to continue installation or "n" to cancel:')
                 confirm = input()
                 if confirm:
                     if confirm == 'y':
@@ -115,4 +117,4 @@ class InstallPytorch(Install):
 
 
 def test_import():
-    logging.debug('Import is fine')
+    return 42
