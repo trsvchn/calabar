@@ -19,7 +19,7 @@ class Install:
         self.cuda_version = None
         self.nvidia_device = '/dev/nvidia0'
 
-    def _set_cuda_version(self) -> None:
+    def _set_gpu_accelerator(self) -> None:
         """
         Set CUDA version.
         """
@@ -43,7 +43,7 @@ class Install:
         self.platform = f'{get_abbr_impl()}{get_impl_ver()}-{get_abi_tag()}'
         logging.info(f'{self.platform} platform detected!')
 
-    def _pip_install(self, packages: list) -> None:
+    def _pip_install(self, packages: list) -> [int, None]:
         """
         Install listed packages using pip.
         Not really useful for external usage.
@@ -55,15 +55,17 @@ class Install:
 
         if installation_output == 0:
             logging.info(f'The following packages were installed successfully: {" ".join(packages)}')
+            return installation_output
         else:
             logging.critical('Error occurred during installation!')
-            logging.info(f'To get full error message, run this command in next cell:\n###\n!{cmd}\n###')  # TODO: refactor!!
+            logging.info(f'To get full error message, run this command in the next cell:\n###\n!{cmd}\n###')  # TODO: refactor!!
+            return None
 
 
 class InstallPyTorch(Install):
 
     def __init__(self):
-        super().__init__()
+        super(InstallPyTorch, self).__init__()
         self.link = f'http://download.pytorch.org/whl/{self.accelerator}/'
         self.default_version = '0.4.1'
         self.install = True
@@ -104,7 +106,7 @@ class InstallPyTorch(Install):
         if not version:
             version = self.default_version
         if gpu:
-            self._set_cuda_version()
+            self._set_gpu_accelerator()
             self._check_version(version)
         if self.install:
             logging.info(f'{version} PyTorch is going to be installed')
