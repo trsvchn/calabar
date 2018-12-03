@@ -114,7 +114,7 @@ class InstallPyTorch(Install):
             self._check_version(version)
         if self.install:
             logging.info(f'{version} PyTorch is going to be installed')
-            if version == '1.0.0':
+            if version == '1.0.0':  # TODO: integrate to _check_version
                 pytorch_nightly = ['torch_nightly', f'-f {self.nightly_link}']
                 packages_0 = ['numpy', 'torchvision_nightly']
                 self._pip_install(packages_0)
