@@ -67,6 +67,7 @@ class InstallPyTorch(Install):
     def __init__(self):
         super(InstallPyTorch, self).__init__()
         self.link = f'http://download.pytorch.org/whl/'
+        self.nightly_link = 'https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html'
         self.default_version = '0.4.1'
         self.install = True
 
@@ -113,13 +114,16 @@ class InstallPyTorch(Install):
             self._check_version(version)
         if self.install:
             logging.info(f'{version} PyTorch is going to be installed')
-            self._set_platform()
-            pytorch_wheel = f'torch-{version}-{self.platform}-linux_x86_64.whl'  # setting PyTorch wheel
-            logging.info(f'Downloading {pytorch_wheel} from {self.link}\n...')
-            pytorch = f'{self.link}{self.accelerator}/{pytorch_wheel}'
-            packages = [pytorch, 'torchvision']
-            self._pip_install(packages)  # Installing PyTorch and torchvision
-
-
-def testimport():
-    return 42
+            if version == '1.0.0':
+                pytorch_nightly = ['torch_nightly', f'-f {self.nightly_link}']
+                packages_0 = ['numpy', 'torchvision_nightly']
+                self._pip_install(packages_0)
+                logging.info(f'Downloading PyTorch {version} from {self.nightly_link}\n...')
+                self._pip_install(pytorch_nightly)
+            else:
+                self._set_platform()
+                pytorch_wheel = f'torch-{version}-{self.platform}-linux_x86_64.whl'  # setting PyTorch wheel
+                logging.info(f'Downloading {pytorch_wheel} from {self.link}\n...')
+                pytorch = f'{self.link}{self.accelerator}/{pytorch_wheel}'
+                packages = [pytorch, 'torchvision']
+                self._pip_install(packages)  # Installing PyTorch and torchvision
