@@ -18,6 +18,7 @@ TEST_PACKAGE_INVALID = ['foo', 'bar']
 DEFAULT_PYTORCH_VERSION = '0.4.1'
 PYTORCH_LINK = 'http://download.pytorch.org/whl/'
 
+
 @pytest.fixture
 def install():
     """Default installation"""
