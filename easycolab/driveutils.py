@@ -74,6 +74,8 @@ class MountCopy:
 class SaveToDrive:
     """
     Provides authorization to Google Drive and uploads file to it.
+
+    Note: Adopted from Google Colaboratory Code snippets
     """
 
     def __init__(self):
@@ -85,11 +87,11 @@ class SaveToDrive:
         gauth.credentials = GoogleCredentials.get_application_default()
         self.drive = GoogleDrive(gauth)
 
-    def save2drive(self, file: str) -> None:
+    def to_drive(self, file: str) -> None:
         """
         Save file from Colab instance directly to Google Drive
 
-        :param file: str, file to upload
+        :param file: str, path to file to be uploaded
         :return: None
         """
         file_name = os.path.basename(file)
