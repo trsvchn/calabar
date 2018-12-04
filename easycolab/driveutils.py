@@ -5,11 +5,13 @@ Performs mounting, copying an saving files to Google Drive
 import os
 import shutil
 import errno
+
+from google.colab import auth
 from google.colab import drive
 
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-from google.colab import auth
+
 from oauth2client.client import GoogleCredentials
 
 
@@ -39,7 +41,7 @@ class MountCopy:
         Copies file or folder from mounted folder.
 
         :param source: str, file or folder from drive to be copied. Ex: data.tar.gz
-        You don't need to specify the full path /drive/My\ Drive/data.tar.gz, just point file/folder
+        You don't need to specify the full path /drive/My Drive/data.tar.gz, just point file/folder
         from your mounting point
         :param dest: str, destination path
         :return: None
