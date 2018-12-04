@@ -19,6 +19,10 @@ DEFAULT_PYTORCH_VERSION = '0.4.1'
 PYTORCH_LINK = 'http://download.pytorch.org/whl/'
 
 
+FROM_ADDR = 'foo@bar'
+TO_ADDRS = ['foo@foo', 'bar@bar']
+
+
 @pytest.fixture
 def install():
     """Default installation"""

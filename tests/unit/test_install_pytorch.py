@@ -14,9 +14,9 @@ def test_pytorch_install_init(install_pytorch):
 
 
 def test_get_user_input(monkeypatch, install_pytorch):
-    def input_path():
+    def input_patch():
         return 'foo'
-    monkeypatch.setattr(builtins, 'input', input_path)
+    monkeypatch.setattr(builtins, 'input', input_patch)
     assert install_pytorch._get_user_input() == 'foo'
 
 
@@ -25,11 +25,11 @@ def test_get_user_input(monkeypatch, install_pytorch):
                                                                ('0.4.1', 'y', True, DEFAULT_ACCELERATOR),
                                                                ])
 def test_check_version(monkeypatch, install_pytorch, version, confirmation, install, cuda):
-    def input_path():
+    def input_patch():
         return confirmation
 
     with monkeypatch.context() as m:
-        m.setattr(builtins, 'input', input_path)
+        m.setattr(builtins, 'input', input_patch)
         assert install_pytorch.accelerator == DEFAULT_ACCELERATOR
         assert install_pytorch.install is True
         assert install_pytorch._check_version(version) is None
@@ -52,11 +52,11 @@ def test_install_pytorch_default(install_pytorch):
                                                               ('0.4.1', False, 'y', True),
                                                               ])
 def test_call_install_pytorch(monkeypatch, install_pytorch, version, gpu, confirmation, install):
-    def input_path():
+    def input_patch():
         return confirmation
 
     with monkeypatch.context() as m:
         assert install_pytorch.install is True
-        m.setattr(builtins, 'input', input_path)
+        m.setattr(builtins, 'input', input_patch)
         assert install_pytorch(version, gpu) is None
         assert install_pytorch.install is install
