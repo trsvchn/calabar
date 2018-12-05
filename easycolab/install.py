@@ -1,4 +1,4 @@
-"""
+r"""
 Handles installation of libraries, packages etc.
 """
 
