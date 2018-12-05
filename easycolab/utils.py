@@ -1,4 +1,4 @@
-r"""Utils is utils"""
+r"""Utils is utils."""
 
 import subprocess
 from datetime import datetime

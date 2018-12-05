@@ -12,6 +12,7 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 
 class Install:
+    r"""Base class for installation stuff."""
 
     def __init__(self):
         self.accelerator = 'cpu'  # default is CPU
@@ -20,9 +21,8 @@ class Install:
         self.nvidia_device = '/dev/nvidia0'
 
     def _set_gpu_accelerator(self) -> None:
-        """
-        Set CUDA version.
-        """
+        r"""Set right CUDA version."""
+
         is_cuda = exists(self.nvidia_device)
         assert is_cuda, "No GPU detected. Please change runtime type to 'GPU':\
                          \nRuntime -> Change runtime type -> Hardware accelerator -> GPU"
@@ -37,16 +37,17 @@ class Install:
         self.accelerator = cuda  # set accelerator to GPU
 
     def _set_platform(self) -> None:
-        """
-        Set instance platform info.
-        """
+        r"""Set instance platform."""
+
         self.platform = f'{get_abbr_impl()}{get_impl_ver()}-{get_abi_tag()}'
         logging.info(f'{self.platform} platform detected!')
 
     def _pip_install(self, packages: list) -> [int, None]:
-        """
-        Install listed packages using pip.
-        Not really useful for external usage.
+        r"""
+        Install listed packages using pip. Not really useful for external usage.
+
+        Parameters:
+            packages (list): Packages to install as list of strings.
         """
         assert isinstance(packages, list), 'input packages is not a list! Please, provide packages as list of str'
 
@@ -63,6 +64,10 @@ class Install:
 
 
 class InstallPyTorch(Install):
+    r"""
+    Handles PyTorch installation. By default install PyTorch 0.4.1 version compiled with CUDA 9.2.
+    In addition, installation of version 1.0.0, and version 0.4.0 are also available, but the last one is not recommended.
+    """
 
     def __init__(self):
         super(InstallPyTorch, self).__init__()
@@ -75,10 +80,8 @@ class InstallPyTorch(Install):
         return str(input())
 
     def _check_version(self, version: str) -> None:
-        """
-        Check the correctness of user specified version.
-        :param version: string version of PyTorch. Recommended version is 0.4.1.
-        :return:
+        r"""
+        Checks the correctness of user specified version. Recommended version is 0.4.1.
         """
 
         if version == '0.4.0':
@@ -98,11 +101,12 @@ class InstallPyTorch(Install):
                         _ = False
 
     def __call__(self, version: str = None, gpu: bool = True) -> None:
-        """
+        r"""
+        Launch Installation process.
 
-        :param version:
-        :param gpu:
-        :return:
+        Parameters:
+            version (str): Version of Pytorch to install. Default: '0.4.1'
+            gpu (bool): Install with CUDA support, default: True.
         """
 
         logging.info('Launching Installation Process...')
