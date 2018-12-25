@@ -47,7 +47,7 @@ class Install:
         Install listed packages using pip. Not really useful for external usage.
 
         Parameters:
-            packages (list): Packages to install as list of strings.
+            **packages** (`list`): Packages to install as list of strings.
         """
         assert isinstance(packages, list), 'input packages is not a list! Please, provide packages as list of str'
 
@@ -65,15 +65,15 @@ class Install:
 
 class InstallPyTorch(Install):
     r"""
-    Handles PyTorch installation. By default installs PyTorch 0.4.1 version compiled with CUDA 9.2.
-    In addition, installation of version 1.0.0, and version 0.4.0 are also available, but the last one is not recommended.
+    Handles PyTorch installation. By default installs PyTorch ``1.0.0`` version compiled with CUDA 9.0.
+    In addition, installation of version ``0.4.1``, and version ``0.4.0`` are also available.
     """
 
     def __init__(self):
         super(InstallPyTorch, self).__init__()
         self.link = f'http://download.pytorch.org/whl/'
         self.nightly_link = 'https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html'
-        self.default_version = '0.4.1'
+        self.default_version = '1.0.0'
         self.install = True
 
     def _get_user_input(self) -> str:
@@ -81,7 +81,7 @@ class InstallPyTorch(Install):
 
     def _check_version(self, version: str) -> None:
         r"""
-        Checks the correctness of user specified version. Recommended version is 0.4.1.
+        Checks the user specified version. Recommended versions are ``1.0.0`` or ``1.4.1``.
         """
 
         if version == '0.4.0':
@@ -105,8 +105,8 @@ class InstallPyTorch(Install):
         Launch Installation process.
 
         Parameters:
-            version (str): Version of Pytorch to install. Default: '0.4.1'
-            gpu (bool): Install with CUDA support, default: True.
+            **version** (`str`): Version of Pytorch to install. Default: ``1.0.0``
+            **gpu** (`bool`): Install with CUDA support, default: ``True``.
         """
 
         logging.info('Launching Installation Process...')
@@ -118,12 +118,10 @@ class InstallPyTorch(Install):
             self._check_version(version)
         if self.install:
             logging.info(f'{version} PyTorch is going to be installed')
-            if version == '1.0.0':  # TODO: integrate to _check_version
-                pytorch_nightly = ['torch_nightly', f'-f {self.nightly_link}']
-                packages_0 = ['numpy', 'torchvision_nightly']
-                self._pip_install(packages_0)
-                logging.info(f'Downloading PyTorch {version} from {self.nightly_link}\n...')
-                self._pip_install(pytorch_nightly)
+            if version == '1.0.0':
+                pytorch_latest = ['torch', 'torchvision']
+                logging.info(f'Downloading PyTorch {version}\n...')
+                self._pip_install(pytorch_latest)  # Installing PyTorch and torchvision
             else:
                 self._set_platform()
                 pytorch_wheel = f'torch-{version}-{self.platform}-linux_x86_64.whl'  # setting PyTorch wheel
