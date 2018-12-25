@@ -39,3 +39,6 @@ dmypy.json
 
 # IDEA config files
 .idea/
+
+# docs
+docs/_build/

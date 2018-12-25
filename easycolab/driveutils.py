@@ -17,20 +17,20 @@ from oauth2client.client import GoogleCredentials
 
 class MountCopy:
     r"""
-    Use this class to mount your Google Drive and copy folder/files from it to Colab instance.
+    Use this class to mounting your Google Drive and copying folder or files to Colab instance.
 
     Parameters:
-        mounting_point (str): Where to mount your Google Drive.
+        **mounting_point** (`str`): Where to mount your Google Drive.
 
     .. note::
-        By default it mounts to `/drive`
+        By default mounts to `/drive`
     """
 
     def __init__(self, mounting_point: str = '/drive'):
         r"""
         Basic init
 
-        :param mounting_point: destination where to mount drive
+        **mounting_point** (`str`): destination where to mount drive
 
         Default: '/drive'
         """
@@ -50,11 +50,12 @@ class MountCopy:
         Copies file or folder from mounted folder.
 
         Parameters:
-            source (str): File or folder on mounted drive to copy. Ex: data.tar.gz
-                           You don't need to specify the full path /drive/My Drive/data.tar.gz, just point file/folder
-                           starting from your drive without path to mounting point. Simply treat your mounted drive as
-                           usual drive in cloud. Path to mounting point will add automatically.
-            dest (str): destination path on Colab instance
+            **source** (`str`): File or folder on mounted drive to copy. Ex: data.tar.gz
+            You don't need to specify the full path /drive/My Drive/data.tar.gz, just point file/folder
+            starting from your drive without path to mounting point. Simply treat your mounted drive as
+            usual drive in cloud. Path to mounting point will add automatically.
+
+            **dest** (`str`): destination path on Colab instance.
 
         Adapted from:
         https://www.pythoncentral.io/how-to-recursively-copy-a-directory-folder-in-python/
@@ -71,7 +72,7 @@ class MountCopy:
                 print(f'Failed to copy directory. Error: {e}')
 
     def __call__(self, source: str, dest: str) -> None:
-        r"""Mounts and copies file/folder in one line"""
+        r"""Mounts and copies file or folder in one line"""
         self.mount_drive()
         self.copy_from_drive(source, dest)
 
@@ -93,9 +94,10 @@ class SaveToDrive:
 
     def to_drive(self, file: str) -> None:
         r"""
-        Save file from Colab instance directly to Google Drive
+        Save file from Colab instance directly to Google Drive.
+
         Parameters:
-            file (str): File to upload. The full path to the file should be specified.
+            **file** (`str`): File to upload. The full path to the file should be specified.
         """
         file_name = os.path.basename(file)
         print(f'Uploading {file_name}...')

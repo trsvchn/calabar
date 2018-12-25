@@ -13,15 +13,15 @@ from email.mime.multipart import MIMEMultipart
 class Email:
     r"""
     Notification over email using Gmail account (Gmail SMTP server). Currently tested only on Gmail account.
-    But you can try another SMTP servers by replacing default values for `host` and `port`.
+    But you can try another SMTP servers by replacing default values for ``host`` and ``port``.
 
     Parameters:
-        from_addr (str): Email address, that will be sender. All messages will be sent from this account. You'll also
-                         be asked to enter password from your account. SMTP server requires your Gmail password.
-        to_addrs (list): List of email address that will receive messages. List of receiver. You can use the same address
-                         as for `from_addr`. In this case the message will be sent and received by the same account.
-        host (str): SMTP server host address. Default: `'smtp.gmail.com'` (for Gmail).
-        port (int): SMTP port. Default: 587 (for Gmail).
+        **from_addr** (`str`): Email address, that will be sender. All messages will be sent from this account. You'll also
+        be asked to enter password from your account. SMTP server requires your Gmail password.
+        **to_addrs** (`list`): List of email address that will receive messages. List of receiver. You can use the same address
+        as for ``from_addr``. In this case the message will be sent and received by the same account.
+        **host** (`str`): SMTP server host address. Default: ``'smtp.gmail.com'`` (for Gmail).
+        **port** (`int`): SMTP port. Default: ``587`` (for Gmail).
 
     .. warning::
         If you face some problems with sending emails. Try to allow “less secure apps” on your Gmail:
@@ -37,13 +37,12 @@ class Email:
 
     def send_mail(self, msg_subject: str, msg_body: str, attachment: str = None):
         r"""
-        Sends email with subject `msg_subject`, text `msg_body` and (optional) attachment `attachment`.
+        Sends email with subject ``msg_subject``, text ``msg_body`` and (optional) attachment ``attachment``.
 
         Parameters:
-
-            msg_subject (str): Message subject.
-            msg_body (str): Message text content (body).
-            attachment (str): Path to file to be attached.
+            **msg_subject** (`str`): Message subject.
+            **msg_body** (`str`): Message text content (body).
+            **attachment** (`str`): Path to file to be attached.
 
         .. note::
             Currently only images are supported as file attachments.

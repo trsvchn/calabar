@@ -65,7 +65,7 @@ class Install:
 
 class InstallPyTorch(Install):
     r"""
-    Handles PyTorch installation. By default install PyTorch 0.4.1 version compiled with CUDA 9.2.
+    Handles PyTorch installation. By default installs PyTorch 0.4.1 version compiled with CUDA 9.2.
     In addition, installation of version 1.0.0, and version 0.4.0 are also available, but the last one is not recommended.
     """
 
