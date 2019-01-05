@@ -19,6 +19,7 @@ Welcome to easycolab's documentation!
 
    modules/install
    modules/driveutils
+   modules/arch
    modules/notifications
    modules/utils
 
