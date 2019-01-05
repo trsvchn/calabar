@@ -6,7 +6,7 @@ import tarfile
 
 
 class Extractor:
-    r"""Main class for working with archives"""
+    r"""Main class for extracting files from archives"""
 
     def __init__(self, arch_obj):
         self.arch_obj = arch_obj
