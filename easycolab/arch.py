@@ -17,7 +17,8 @@ class Extractor:
 
         Parameters:
             **path_to_file** (`str`): Path to archive.
-            **dest_path** (`str`): Destination path for archived files.
+
+            **dest_path** (`str`): Destination path for files to be extracted.
         """
 
         if 'gz' in path_to_file:
