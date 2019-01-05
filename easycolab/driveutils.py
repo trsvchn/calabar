@@ -1,5 +1,5 @@
 r"""
-Performs mounting, copying an saving files to Google Drive.
+Performs mounting, copying and saving files to Google Drive.
 """
 
 import os
@@ -20,7 +20,7 @@ class MountCopy:
     Use this class to mounting your Google Drive and copying folder or files to Colab instance.
 
     Parameters:
-        **mounting_point** (`str`): Where to mount your Google Drive.
+        **mounting_point** (`str`): Place where your Google Drive will be mounted to.
 
     .. note::
         By default mounts to `/drive`

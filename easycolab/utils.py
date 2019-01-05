@@ -6,7 +6,7 @@ from datetime import datetime
 
 def get_gpu_usage() -> str:
     r"""Returns current gpu usage."""
-    # TODO: collect usage statistics on time intervals
+    # TODO: collect usage statistics on time intervals?
     used = subprocess.getoutput('nvidia-smi --query-gpu=memory.used --format=csv,nounits,noheader')
     total = subprocess.getoutput('nvidia-smi --query-gpu=memory.total --format=csv,noheader')
     return f'{used} / {total}'
