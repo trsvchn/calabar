@@ -3,6 +3,9 @@ import pytest
 
 sys.path.append('.')  # for pytest on automatic testing stage
 
+sys.modules['google'] = __import__('mock_import')
+sys.modules['google.colab'] = __import__('mock_import')
+
 from easycolab.install import Install, InstallPyTorch
 
 
@@ -15,7 +18,7 @@ TEST_PACKAGE_VALID = ['pip', 'pip']
 TEST_PACKAGE_INVALID_TYPE = 'foo'
 TEST_PACKAGE_INVALID = ['foo', 'bar']
 
-DEFAULT_PYTORCH_VERSION = '0.4.1'
+DEFAULT_PYTORCH_VERSION = '1.0.0'
 PYTORCH_LINK = 'http://download.pytorch.org/whl/'
 
 

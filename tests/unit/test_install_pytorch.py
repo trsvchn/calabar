@@ -39,7 +39,7 @@ def test_check_version(monkeypatch, install_pytorch, version, confirmation, inst
 
 @pytest.mark.skip(reason='Performs installation')
 def test_install_pytorch_default(install_pytorch):
-    """Test default PyTorch 0.4.1 installation with CUDA support"""
+    """Test default PyTorch 1.0.0 installation with CUDA support"""
     assert install_pytorch() is None
 
 

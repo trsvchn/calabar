@@ -2,9 +2,6 @@ import pytest
 from conftest import *
 import sys
 
-sys.modules['google'] = __import__('mock_import')
-sys.modules['google.colab'] = __import__('mock_import')
-
 from easycolab.driveutils import MyDrive, SaveToDrive
 
 
@@ -17,7 +14,7 @@ def mountcopy():
 @pytest.fixture
 def savetodrive():
     """Default init"""
-    return MyDrive()
+    return SaveToDrive  # TODO: find a way how to mock gauth
 
 
 def test_init_mountcopy(mountcopy):
