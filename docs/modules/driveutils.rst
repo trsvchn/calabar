@@ -8,10 +8,10 @@ easycolab.driveutils
 .. currentmodule:: easycolab.driveutils
 
 
-:hidden:`MountCopy`
+:hidden:`MyDrive`
 ~~~~~~~~~~~~~~~~~~~
 
-.. autoclass:: MountCopy
+.. autoclass:: MyDrive
     :members:
 
 

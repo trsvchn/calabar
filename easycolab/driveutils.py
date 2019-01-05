@@ -15,9 +15,9 @@ from pydrive.drive import GoogleDrive
 from oauth2client.client import GoogleCredentials
 
 
-class MountCopy:
+class MyDrive:
     r"""
-    Use this class to mounting your Google Drive and copying folder or files to Colab instance.
+    Use this class to mount your Google Drive and copy folder or files to Colab instance.
 
     Parameters:
         **mounting_point** (`str`): Place where your Google Drive will be mounted to.
