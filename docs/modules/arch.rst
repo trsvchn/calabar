@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-easycolab.arch
+labco.arch
 ===================================
 
-.. automodule:: easycolab.arch
-.. currentmodule:: easycolab.arch
+.. automodule:: labco.arch
+.. currentmodule:: labco.arch
 
 
 :hidden:`Extractor`

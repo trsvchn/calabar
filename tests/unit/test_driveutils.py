@@ -2,7 +2,7 @@ import pytest
 from conftest import *
 import sys
 
-from easycolab.driveutils import MyDrive, SaveToDrive
+from labco.driveutils import MyDrive, SaveToDrive
 
 
 @pytest.fixture

@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'easycolab'
+project = 'labco'
 copyright = '2018, Taras Savchyn'
 author = 'Taras Savchyn'
 
@@ -117,7 +117,7 @@ html_static_path = []
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'easycolabdoc'
+htmlhelp_basename = 'labcodoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -144,7 +144,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'easycolab.tex', 'easycolab Documentation',
+    (master_doc, 'labco.tex', 'labco Documentation',
      'Taras Savchyn', 'manual'),
 ]
 
@@ -154,7 +154,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'easycolab', 'easycolab Documentation',
+    (master_doc, 'labco', 'labco Documentation',
      [author], 1)
 ]
 
@@ -165,8 +165,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'easycolab', 'easycolab Documentation',
-     author, 'easycolab', 'One line description of project.',
+    (master_doc, 'labco', 'labco Documentation',
+     author, 'labco', 'One line description of project.',
      'Miscellaneous'),
 ]
 

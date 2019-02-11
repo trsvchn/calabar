@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-easycolab.notifications
+labco.notifications
 ===================================
 
-.. automodule:: easycolab.notifications
-.. currentmodule:: easycolab.notifications
+.. automodule:: labco.notifications
+.. currentmodule:: labco.notifications
 
 
 :hidden:`Email`

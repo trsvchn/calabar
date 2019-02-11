@@ -1,6 +1,6 @@
 import pytest
 from conftest import *
-from easycolab.notifications import Email
+from labco.notifications import Email
 import getpass
 
 

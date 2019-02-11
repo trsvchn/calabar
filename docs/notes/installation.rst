@@ -6,7 +6,7 @@ On Colab
 
 Run this:
 
-``!pip install easycolab``
+``!pip install labco``
 
 Dev install
 -----------

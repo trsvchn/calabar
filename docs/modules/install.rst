@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-easycolab.install
+labco.install
 ===================================
 
-.. automodule:: easycolab.install
-.. currentmodule:: easycolab.install
+.. automodule:: labco.install
+.. currentmodule:: labco.install
 
 
 :hidden:`Install`

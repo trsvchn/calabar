@@ -1,7 +1,7 @@
 from os.path import exists
 import pytest
 from conftest import *
-from easycolab import utils
+from labco import utils
 
 
 @pytest.mark.skipif(not exists(NVIDIA_PATH), reason='Requires NVIDIA driver')
