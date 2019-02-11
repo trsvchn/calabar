@@ -28,11 +28,11 @@ class MyDrive:
 
     def __init__(self, mounting_point: str = '/drive'):
         r"""
-        Basic init
+        Basic init.
 
         **mounting_point** (`str`): destination where to mount drive
 
-        Default: '/drive'
+        Default: '/drive'.
         """
         self.mounting_point = mounting_point
 
@@ -60,6 +60,7 @@ class MyDrive:
         Adapted from:
         https://www.pythoncentral.io/how-to-recursively-copy-a-directory-folder-in-python/
         """
+
         source_path = os.path.join(self.mounting_point, source)
         try:
             shutil.copytree(source_path, dest)
@@ -72,7 +73,8 @@ class MyDrive:
                 print(f'Failed to copy directory. Error: {e}')
 
     def __call__(self, source: str, dest: str) -> None:
-        r"""Mounts and copies file or folder in one line"""
+        r"""Mounts and copies file or folder in one line."""
+
         self.mount_drive()
         self.copy_from_drive(source, dest)
 
@@ -99,6 +101,7 @@ class SaveToDrive:
         Parameters:
             **file** (`str`): File to upload. The full path to the file should be specified.
         """
+
         file_name = os.path.basename(file)
         print(f'Uploading {file_name}...')
         auth.authenticate_user()

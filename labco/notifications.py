@@ -27,6 +27,7 @@ class Email:
         If you face some problems with sending emails. Try to allow “less secure apps” on your Gmail:
         https://www.google.com/settings/security/lesssecureapps
     """
+
     def __init__(self, from_addr: str, to_addrs: list, host: str = 'smtp.gmail.com', port: int = 587):
         r"""Default init"""
         self.from_addr = from_addr
@@ -47,6 +48,7 @@ class Email:
         .. note::
             Currently only images are supported as file attachments.
         """
+
         msg = MIMEMultipart()
         msg['From'] = self.from_addr
         msg['To'] = ','.join(self.to_addrs)

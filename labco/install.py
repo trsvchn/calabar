@@ -49,6 +49,7 @@ class Install:
         Parameters:
             **packages** (`list`): Packages to install as list of strings.
         """
+
         assert isinstance(packages, list), 'input packages is not a list! Please, provide packages as list of str'
 
         cmd = f'pip install -q {" ".join(packages)}'
