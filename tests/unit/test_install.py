@@ -3,6 +3,7 @@ import pytest
 from conftest import *
 
 
+@pytest.mark.skip(reason='Installation is no longer required.')
 def test_default_install(install):
     assert install.accelerator == 'cpu'
     assert install.platform is None
@@ -10,7 +11,8 @@ def test_default_install(install):
     assert install.nvidia_device == NVIDIA_PATH
 
 
-@pytest.mark.skipif(not exists(NVIDIA_PATH), reason='Requires CUDA')
+@pytest.mark.skip(reason='Installation is no longer required.')
+# @pytest.mark.skipif(not exists(NVIDIA_PATH), reason='Requires CUDA')
 def test_set_gpu_accelerator(install):
     install._set_gpu_accelerator()
     assert install.cuda_version == CUDA_VERSION

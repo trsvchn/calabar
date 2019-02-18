@@ -3,6 +3,7 @@ import pytest
 from conftest import *
 
 
+@pytest.mark.skip(reason='Installation is no longer required.')
 def test_pytorch_install_init(install_pytorch):
     assert install_pytorch.accelerator == 'cpu'
     assert install_pytorch.platform is None
@@ -20,6 +21,7 @@ def test_get_user_input(monkeypatch, install_pytorch):
     assert install_pytorch._get_user_input() == 'foo'
 
 
+@pytest.mark.skip(reason='Installation is no longer required.')
 @pytest.mark.parametrize("version,confirmation,install,cuda", [('0.4.0', 'n', False, DEFAULT_ACCELERATOR),
                                                                ('0.4.0', 'y', True, 'cu91'),
                                                                ('0.4.1', 'y', True, DEFAULT_ACCELERATOR),
@@ -37,7 +39,7 @@ def test_check_version(monkeypatch, install_pytorch, version, confirmation, inst
         assert install_pytorch.accelerator == cuda
 
 
-@pytest.mark.skip(reason='Performs installation')
+@pytest.mark.skip(reason='Installation is no longer required.')
 def test_install_pytorch_default(install_pytorch):
     """Test default PyTorch 1.0.0 installation with CUDA support"""
     assert install_pytorch() is None

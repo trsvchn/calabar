@@ -66,6 +66,9 @@ class Install:
 
 class InstallPyTorch(Install):
     r"""
+    .. note::
+        This feature is outdated. Colab already supports with PyTorch out of the box.
+
     Handles PyTorch installation. By default installs PyTorch ``1.0.0`` version compiled with CUDA 9.0.
     In addition, installation of version ``0.4.1``, and version ``0.4.0`` are also available.
     """
