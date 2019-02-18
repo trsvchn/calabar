@@ -133,3 +133,6 @@ class InstallPyTorch(Install):
                 pytorch = f'{self.link}{self.accelerator}/{pytorch_wheel}'
                 packages = [pytorch, 'torchvision']
                 self._pip_install(packages)  # Installing PyTorch and torchvision
+
+
+install_pytorch = InstallPyTorch()  # TODO: outdated!!
