@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-labco.install
+coutils.install
 ===================================
 
-.. automodule:: labco.install
-.. currentmodule:: labco.install
+.. automodule:: coutils.install
+.. currentmodule:: coutils.install
 
 
 :hidden:`Install`

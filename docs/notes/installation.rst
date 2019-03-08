@@ -6,7 +6,7 @@ On Colab
 
 Run this:
 
-``!pip install labco``
+``!pip install coutils``
 
 Dev install
 -----------

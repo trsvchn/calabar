@@ -7,7 +7,7 @@ with open('README.md') as f:
     README = f.read()
 
 
-NAME = 'labco'
+NAME = 'coutils'
 DESCRIPTION = 'Makes Google Colab more friendly.'
 LICENSE = 'Apache-2.0'
 REQUIRES_PYTHON = '>=3.6.0'

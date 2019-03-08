@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-labco.arch
+coutils.arch
 ===================================
 
-.. automodule:: labco.arch
-.. currentmodule:: labco.arch
+.. automodule:: coutils.arch
+.. currentmodule:: coutils.arch
 
 
 :hidden:`Extractor`

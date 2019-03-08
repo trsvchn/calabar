@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-labco.driveutils
+coutils.driveutils
 ===================================
 
-.. automodule:: labco.driveutils
-.. currentmodule:: labco.driveutils
+.. automodule:: coutils.driveutils
+.. currentmodule:: coutils.driveutils
 
 
 :hidden:`MyDrive`

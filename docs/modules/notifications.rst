@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-labco.notifications
+coutils.notifications
 ===================================
 
-.. automodule:: labco.notifications
-.. currentmodule:: labco.notifications
+.. automodule:: coutils.notifications
+.. currentmodule:: coutils.notifications
 
 
 :hidden:`Email`

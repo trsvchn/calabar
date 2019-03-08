@@ -6,7 +6,7 @@ sys.path.append('.')  # for pytest on automatic testing stage
 sys.modules['google'] = __import__('mock_import')
 sys.modules['google.colab'] = __import__('mock_import')
 
-from labco.install import Install, InstallPyTorch
+from coutils.install import Install, InstallPyTorch
 
 
 DEFAULT_ACCELERATOR = 'cpu'

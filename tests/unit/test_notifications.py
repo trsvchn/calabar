@@ -1,6 +1,6 @@
 import pytest
 from conftest import *
-from labco.notifications import Email
+from coutils.notifications import Email
 import getpass
 
 

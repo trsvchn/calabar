@@ -1,28 +1,28 @@
 .. role:: hidden
     :class: hidden-section
 
-labco.utils
+coutils.utils
 ===================================
 
-.. automodule:: labco.utils
-.. currentmodule:: labco.utils
+.. automodule:: coutils.utils
+.. currentmodule:: coutils.utils
 
 get_gpu_usage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. autofunction:: labco.utils.get_gpu_usage
+.. autofunction:: coutils.utils.get_gpu_usage
 
 get_disk_usage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. autofunction:: labco.utils.get_disk_usage
+.. autofunction:: coutils.utils.get_disk_usage
 
 get_distro_descr
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. autofunction:: labco.utils.get_distro_descr
+.. autofunction:: coutils.utils.get_distro_descr
 
 current_time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. autofunction:: labco.utils.current_time
+.. autofunction:: coutils.utils.current_time
