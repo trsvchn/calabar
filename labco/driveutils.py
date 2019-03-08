@@ -35,25 +35,23 @@ class MyDrive:
         Default: '/drive'.
         """
         self.mounting_point = mounting_point
+        self.mnt_wd = None  # Mounted working directory, EX: '\drive\My Drive'
 
-    def mount_drive(self) -> None:
+    def mount(self) -> None:
         r"""
-        Mounts Drive to specified location.
+        Mounts Drive to specified location. Acts like a wrapper of ``google.colab.drive``.
 
         """
         drive.mount(self.mounting_point)
         # print(f'Google drive mounted on {self.mounting_point}')
-        self.mounting_point = os.path.join(self.mounting_point, 'My Drive')
+        # self.mounting_point = os.path.join(self.mounting_point, 'My Drive')
 
-    def copy_from_drive(self, source: str, dest: str) -> None:
+    def cp(self, source: str, dest: str) -> None:
         r"""
         Copies file or folder from mounted folder.
 
         Parameters:
             **source** (`str`): File or folder on mounted drive to copy. Ex: data.tar.gz
-            You don't need to specify the full path /drive/My Drive/data.tar.gz, just point file/folder
-            starting from your drive without path to mounting point. Simply treat your mounted drive as
-            usual drive in cloud. Path to mounting point will add automatically.
 
             **dest** (`str`): destination path on Colab instance.
 
@@ -61,7 +59,11 @@ class MyDrive:
         https://www.pythoncentral.io/how-to-recursively-copy-a-directory-folder-in-python/
         """
 
-        source_path = os.path.join(self.mounting_point, source)
+        if self.mnt_wd is not None:
+            source_path = os.path.join(self.mnt_wd, source)
+        else:
+            source_path = source
+
         try:
             shutil.copytree(source_path, dest)
             print(f'Directory {source_path} copied to {dest} successfully')
@@ -72,11 +74,15 @@ class MyDrive:
             else:
                 print(f'Failed to copy directory. Error: {e}')
 
-    def __call__(self, source: str, dest: str) -> None:
-        r"""Mounts and copies file or folder in one line."""
+    def pipeline(self, *args, **kwargs):
+        r"""Place where custom pipeline is defined."""
 
-        self.mount_drive()
-        self.copy_from_drive(source, dest)
+        return NotImplemented
+
+    def __call__(self, *args, **kwargs):
+        r"""Runs steps defined in ``pipeline`` method."""
+
+        self.pipeline(*args, **kwargs)
 
 
 class SaveToDrive:
@@ -84,7 +90,7 @@ class SaveToDrive:
     Provides authorization to Google Drive and uploads files to it.
 
     .. note::
-        Adopted from Google Colaboratory Code snippets.
+        Adopted from Colab Code snippets.
     """
 
     def __init__(self):
