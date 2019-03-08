@@ -42,7 +42,7 @@ class MyDrive:
 
         """
         drive.mount(self.mounting_point)
-        print(f'Google drive mounted on {self.mounting_point}')
+        # print(f'Google drive mounted on {self.mounting_point}')
         self.mounting_point = os.path.join(self.mounting_point, 'My Drive')
 
     def copy_from_drive(self, source: str, dest: str) -> None:
