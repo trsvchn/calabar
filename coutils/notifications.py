@@ -36,7 +36,7 @@ class Email:
         self.host = host
         self.port = port
 
-    def send_mail(self, msg_subject: str, msg_body: str, attachment: str = None):
+    def send(self, msg_subject: str, msg_body: str, attachment: str = None):
         r"""
         Sends email with subject ``msg_subject``, text ``msg_body`` and (optional) attachment ``attachment``.
 
