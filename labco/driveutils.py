@@ -46,6 +46,10 @@ class MyDrive:
         # print(f'Google drive mounted on {self.mounting_point}')
         # self.mounting_point = os.path.join(self.mounting_point, 'My Drive')
 
+    def remount(self):
+        # TODO: Add remount feature, source to look at: drive.mount("/drive", force_remount=True)
+        return NotImplemented
+
     def cp(self, source: str, dest: str) -> None:
         r"""
         Copies file or folder from mounted folder.
