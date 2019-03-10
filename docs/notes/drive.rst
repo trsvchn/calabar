@@ -29,7 +29,7 @@ Now your Drive will be mounted to ``/location/My Drive``.
 Copying from Drive
 ------------------
 
-If you need to copy a file or a folder from your (now mounted) Drive to your Colab instance use the following method:
+If you need to copy a file or a folder from your (now mounted) Drive to your Colab instance use the ``cp`` method:
 
 ::
 
@@ -37,3 +37,17 @@ If you need to copy a file or a folder from your (now mounted) Drive to your Col
     destination = '/content'
 
     drive.cp(file2copy, destination)
+
+
+Copying to Drive
+------------------
+
+To copy file from Colab to Google Drive:
+::
+
+    from coutils import SaveToDrive
+
+    export = SaveToDrive()  # should be initialized once
+
+    export.to_drive('file_on_colab')
+    export.to_drive('another_file')
