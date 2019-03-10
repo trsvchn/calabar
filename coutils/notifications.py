@@ -18,9 +18,12 @@ class Email:
     Parameters:
         **from_addr** (`str`): Email address, that will be sender. All messages will be sent from this account. You'll also
         be asked to enter password from your account. SMTP server requires your Gmail password.
+
         **to_addrs** (`list`): List of email address that will receive messages. List of receiver. You can use the same address
         as for ``from_addr``. In this case the message will be sent and received by the same account.
+
         **host** (`str`): SMTP server host address. Default: ``'smtp.gmail.com'`` (for Gmail).
+
         **port** (`int`): SMTP port. Default: ``587`` (for Gmail).
 
     .. warning::
@@ -42,7 +45,9 @@ class Email:
 
         Parameters:
             **msg_subject** (`str`): Message subject.
+
             **msg_body** (`str`): Message text content (body).
+
             **attachment** (`str`): Path to file to be attached.
 
         .. note::
