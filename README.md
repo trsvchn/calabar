@@ -162,7 +162,7 @@ for epoch in n_epochs:
     val_loss, val_ acc = validate(...)
       
     # Here you're saving your model checkpoint
-    checkpoint_name = f'{epoch}-{val_loss}-{acc}-mymodel.checkpoint'  # this is just example
+    checkpoint_name = f'{epoch}-{val_loss:.3f}-{acc:.3f}-mymodel.checkpoint'  # this is just example
     save_checkpoint(f'/content/checkpoints/{checkpoint_name}')
     
     # Here you're loading it to your Drive:
@@ -172,7 +172,7 @@ for epoch in n_epochs:
     
     epoch_sub = f'{epoch}/{n_epoch} has finished!'
     epoch_msg = f'{epoch}/{n_epoch} has finished successfully at {current_time()}\
-                \ntrain_loss: {train_loss} | val_loss: {val_loss} | train_acc: {train_acc} | val_acc: {val_ acc}\
+                \ntrain_loss: {train_loss:.3f}|val_loss: {val_loss:.3f}|train_acc: {train_acc:.3f}|val_acc: {val_acc:.3f}\
                 \nModel checkpoint {checkpoint_name} successfully loaded to Drive\
                 \nCurrent GPU usage: {get_gpu_usage()}\
                 \nCurrent disk usage: {get_disk_usage()}'
