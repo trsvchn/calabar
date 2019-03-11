@@ -1,0 +1,13 @@
+language: python
+
+python:
+  - "3.6"
+
+install:
+  - pip install pydrive pytest==4.1.1 pytest-cov codecov
+
+script:
+  - pytest --cov=./coutils tests/
+
+after_success:
+- codecov
