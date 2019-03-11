@@ -1,6 +1,6 @@
 # CoUtils (Work in progress...)
 
-Makes Colab more handy
+Useful tools to make Colab more handy.
 
 ## Installation
 
@@ -21,7 +21,7 @@ drive = MyDrive('/drive')
 drive.mount()
 ```
 
-Copy file/folder from mounted Drive:
+Copy file/folder from mounted Drive, for example, some data, model checkpoint from the previous training, etc:
 
 ```python
 file2copy = '/drive/My Drive/data.tar'
@@ -33,7 +33,7 @@ drive.cp(file2copy, dest)
 **NOTE:** During mounting internal colab tool will create 'My Drive' folder inside `/drive`,
 so don't forget to add 'My Drive' to file path.
 
-Export file from Colab to Drive:
+Export file from Colab to Drive, for example, training logs, model checkpoints, etc:
 
 ```python
 from coutils import SaveToDrive
@@ -64,13 +64,13 @@ unzip('data.zip', 'to_destination')
 
 ### Sending Notifications over Gmail
 
-**NOTE:** If you face some problems with sending emails, you need to allow “less secure apps” on your Gmail account:
+**NOTE:** To use this option, you need to allow “less secure apps” on your Gmail account:
 > https://www.google.com/settings/security/lesssecureapps
 
 **SECURITY WARNING:** Continuous sending of emails (for example, sending email after each epoch) requires storing your 
 Gmail account password in memory, allowing you not to relogin to SMTP server each time, when you want to send an email.
 BUT, CoUtils uses secure TLS connection. Anyway, if you feel unsafe because of "less secure appps" and using
-SMTP server, or you just don't like it, you may not use or use another "less secured" account
+SMTP server, or you just don't like it, you may not use it or use another "less secured" account
 (with "less secure apps” option on) and send emails to your primary account, as shown below:
 
 ```python
@@ -159,10 +159,10 @@ for epoch in n_epochs:
       
     # Here you're saving your model checkpoint
     checkpoint_name = f'{epoch}-{val_loss}-{acc}-mymodel.checkpoint'  # this is just example
-    save_checkpoint(f'/content/checkpoints/checkpoint_name')
+    save_checkpoint(f'/content/checkpoints/{checkpoint_name}')
     
     # Here you're loading it to your Drive:
-    export.to_drive(f'/content/checkpoints/checkpoint_name')
+    export.to_drive(f'/content/checkpoints/{checkpoint_name}')
     
     # Epoch is over, model checkpoint is exported to your drive, let's notify you about current success:
     
