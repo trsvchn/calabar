@@ -189,8 +189,8 @@ end_msg = f'Training (your model descr) has finished at {current_time()}\
 email.send(end_sub, end_msg)
 ```
 
-## TODO:
+## TODOs:
 
-* tar/zip archiving
-* More docs
-* More examples
+- [ ] tar/zip archiving
+- [ ] More docs
+- [ ] More examples
