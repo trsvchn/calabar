@@ -136,3 +136,17 @@ class InstallPyTorch(Install):
 
 
 install_pytorch = InstallPyTorch()  # TODO: outdated!!
+
+
+def upgrade_pytorch():
+    r"""Upgrades torch and torchvision to the latest version using pip.
+    """
+    cmd = 'pip install torch torchvision -U'
+    logging.info(f'Upgrading pytorch via {cmd}')
+    installation_output = subprocess.call(cmd, shell=True)
+
+    if installation_output == 0:
+        logging.info('torch and torchvision were upgraded to the latest version successfully!')
+    else:
+        logging.critical('Error occurred during installation!')
+        logging.info(f'To get full error message, run the following command in the next cell:\n###\n!{cmd}\n###')

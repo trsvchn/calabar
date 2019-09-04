@@ -62,3 +62,7 @@ def test_call_install_pytorch(monkeypatch, install_pytorch, version, gpu, confir
         m.setattr(builtins, 'input', input_patch)
         assert install_pytorch(version, gpu) is None
         assert install_pytorch.install is install
+
+
+def test_upgrage_pytorch(upgrade):
+    assert upgrade() is None

@@ -6,7 +6,7 @@ sys.path.append('.')  # for pytest on automatic testing stage
 sys.modules['google'] = __import__('mock_import')
 sys.modules['google.colab'] = __import__('mock_import')
 
-from coutils.install import Install, InstallPyTorch
+from coutils.install import Install, InstallPyTorch, upgrade_pytorch
 
 
 DEFAULT_ACCELERATOR = 'cpu'
@@ -36,3 +36,9 @@ def install():
 def install_pytorch():
     """Default PyTorch installation"""
     return InstallPyTorch()
+
+
+@pytest.fixture
+def upgrade():
+    """Upgrading pytorch via pip"""
+    return upgrade_pytorch
