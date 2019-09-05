@@ -6,6 +6,16 @@ Useful tools to make Colab more handy.
 [![travis](https://travis-ci.org/tsavchyn/coutils.svg?branch=master)](https://travis-ci.org/tsavchyn/coutils)
 [![codecov](https://codecov.io/gh/tsavchyn/coutils/branch/master/graph/badge.svg)](https://codecov.io/gh/tsavchyn/coutils)
 
+## Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Working with Google Drive](#working-with-google-drive)
+  - [Working with Archives](#working-with-archives)
+  - [Sending Notifications over Gmail](#sending-notifications-over-gmail)
+  - [Misc](#misc)
+- [Complete Usage Example](#complete-usage-example)
+
 ## Installation
 
 ```
@@ -35,7 +45,7 @@ drive.cp(file2copy, dest)
 ```
 
 **NOTE:** During mounting internal colab tool will create 'My Drive' folder inside `/drive`,
-so don't forget to add 'My Drive' to file path.
+so don't forget to add 'My Drive' to the file path.
 
 Export file from Colab to Drive, for example, training logs, model checkpoints, etc:
 
@@ -90,11 +100,24 @@ msg_body = 'Email body.'
 
 email.send(msg_subject, msg_body)
 ```
+[usage](#usage) | [contents](#contents)
 
 ### Misc
 
 ```python
+# Update torch and torchvision to the latest version
+
+from coutils import upgrade_pytorch
+
+upgrade_pytorch()
+```
+
+```python
 from coutils.utils import *
+
+# Print system info, gpu, and installed pytorch version
+
+print_sysinfo()
 
 # Get current GPU RAM usage:
 
@@ -112,6 +135,8 @@ print(current_time())
 
 print(get_distro_descr())
 ```
+
+[misc](#misc) | [usage](#usage) | [contents](#contents)
 
 ## Complete Usage Example
 
@@ -188,6 +213,8 @@ end_msg = f'Training (your model descr) has finished at {current_time()}\
 
 email.send(end_sub, end_msg)
 ```
+
+[complete usage example](#complete-usage-example) | [misc](#misc) | [usage](#usage) | [contents](#contents)
 
 ## TODOs:
 
