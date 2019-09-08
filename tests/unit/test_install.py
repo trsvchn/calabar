@@ -1,32 +1,32 @@
-from os.path import exists
 import pytest
 from conftest import *
+from coutils.install import pip_install, upgrade_pytorch
 
 
-@pytest.mark.skip(reason='Installation is no longer required.')
-def test_default_install(install):
-    assert install.accelerator == 'cpu'
-    assert install.platform is None
-    assert install.cuda_version is None
-    assert install.nvidia_device == NVIDIA_PATH
+@pytest.fixture
+def install():
+    """Installing packages via pip"""
+    return pip_install
 
 
-@pytest.mark.skip(reason='Installation is no longer required.')
-# @pytest.mark.skipif(not exists(NVIDIA_PATH), reason='Requires CUDA')
-def test_set_gpu_accelerator(install):
-    install._set_gpu_accelerator()
-    assert install.cuda_version == CUDA_VERSION
-    assert install.accelerator == GPU_ACCELERATOR
+@pytest.fixture
+def upgrade():
+    """Upgrading pytorch via pip"""
+    return upgrade_pytorch
 
 
 def test_pip_install_valid(install):
-    assert install._pip_install(TEST_PACKAGE_VALID) == 0
+    assert install(TEST_PACKAGE_VALID) == 0
 
 
 def test_pip_install_invalid_input_type(install):
-    with pytest.raises(AssertionError):
-        install._pip_install(TEST_PACKAGE_INVALID_TYPE)
+    with pytest.raises(ValueError):
+        install(TEST_PACKAGE_INVALID_TYPE)
 
 
 def test_pip_install_invalid_input_package(install):
-    assert install._pip_install(TEST_PACKAGE_INVALID) is None
+    assert install(TEST_PACKAGE_INVALID) is None
+
+
+def test_upgrage_pytorch(upgrade):
+    assert upgrade() == 0
