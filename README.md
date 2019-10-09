@@ -1,10 +1,10 @@
-# CoUtils (Work in progress...)
+# CoUtils
 
 Useful tools to make Colab more handy.
 
 
-[![travis](https://travis-ci.org/tsavchyn/coutils.svg?branch=master)](https://travis-ci.org/tsavchyn/coutils)
-[![codecov](https://codecov.io/gh/tsavchyn/coutils/branch/master/graph/badge.svg)](https://codecov.io/gh/tsavchyn/coutils)
+[![travis](https://travis-ci.org/trsvchn/coutils.svg?branch=master)](https://travis-ci.org/trsvchn/coutils)
+[![codecov](https://codecov.io/gh/trsvchn/coutils/branch/master/graph/badge.svg)](https://codecov.io/gh/trsvchn/coutils)
 
 ## Contents
 
