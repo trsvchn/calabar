@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-coutils.install
+calabar.install
 ===================================
 
-.. automodule:: coutils.install
-.. currentmodule:: coutils.install
+.. automodule:: calabar.install
+.. currentmodule:: calabar.install
 
 
 :hidden:`Install`

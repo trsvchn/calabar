@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-coutils.driveutils
+calabar.driveutils
 ===================================
 
-.. automodule:: coutils.driveutils
-.. currentmodule:: coutils.driveutils
+.. automodule:: calabar.driveutils
+.. currentmodule:: calabar.driveutils
 
 
 :hidden:`MyDrive`

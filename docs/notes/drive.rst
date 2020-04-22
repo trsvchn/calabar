@@ -8,7 +8,7 @@ Mounting
 To mount your Google Drive, use this:
 ::
 
-   from coutils import MyDrive
+   from calabar import MyDrive
 
    drive = MyDrive()
    drive.mount()
@@ -45,7 +45,7 @@ Copying to Drive
 To copy file from Colab to Google Drive:
 ::
 
-    from coutils import SaveToDrive
+    from calabar import SaveToDrive
 
     export = SaveToDrive()  # should be initialized once
 

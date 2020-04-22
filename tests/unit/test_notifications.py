@@ -1,6 +1,6 @@
 import pytest
 from conftest import *
-from coutils.notifications import Email
+from calabar.notifications import Email
 import getpass
 
 

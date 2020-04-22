@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'coutils'
+project = 'calabar'
 copyright = '2018, Taras Savchyn'
 author = 'Taras Savchyn'
 
@@ -117,7 +117,7 @@ html_static_path = []
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'coutilsdoc'
+htmlhelp_basename = 'calabardoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -144,7 +144,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'coutils.tex', 'coutils Documentation',
+    (master_doc, 'calabar.tex', 'calabar Documentation',
      'Taras Savchyn', 'manual'),
 ]
 
@@ -154,7 +154,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'coutils', 'coutils Documentation',
+    (master_doc, 'calabar', 'calabar Documentation',
      [author], 1)
 ]
 
@@ -165,8 +165,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'coutils', 'coutils Documentation',
-     author, 'coutils', 'One line description of project.',
+    (master_doc, 'calabar', 'calabar Documentation',
+     author, 'calabar', 'One line description of project.',
      'Miscellaneous'),
 ]
 

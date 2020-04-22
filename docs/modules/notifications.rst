@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-coutils.notifications
+calabar.notifications
 ===================================
 
-.. automodule:: coutils.notifications
-.. currentmodule:: coutils.notifications
+.. automodule:: calabar.notifications
+.. currentmodule:: calabar.notifications
 
 
 :hidden:`Email`

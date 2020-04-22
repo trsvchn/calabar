@@ -1,11 +1,11 @@
 .. role:: hidden
     :class: hidden-section
 
-coutils.arch
+calabar.arch
 ===================================
 
-.. automodule:: coutils.arch
-.. currentmodule:: coutils.arch
+.. automodule:: calabar.arch
+.. currentmodule:: calabar.arch
 
 
 :hidden:`Extractor`

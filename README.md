@@ -1,10 +1,10 @@
-# CoUtils
+# Calabar
 
 Useful tools to make Colab more handy.
 
 
-[![travis](https://travis-ci.org/trsvchn/coutils.svg?branch=master)](https://travis-ci.org/trsvchn/coutils)
-[![codecov](https://codecov.io/gh/trsvchn/coutils/branch/master/graph/badge.svg)](https://codecov.io/gh/trsvchn/coutils)
+[![travis](https://travis-ci.org/trsvchn/calabar.svg?branch=master)](https://travis-ci.org/trsvchn/calabar)
+[![codecov](https://codecov.io/gh/trsvchn/calabar/branch/master/graph/badge.svg)](https://codecov.io/gh/trsvchn/calabar)
 
 ## Contents
 
@@ -19,7 +19,7 @@ Useful tools to make Colab more handy.
 ## Installation
 
 ```
-!pip install git+https://github.com/trsvchn/coutils.git
+!pip install git+https://github.com/trsvchn/calabar.git
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ Useful tools to make Colab more handy.
 Mount your drive:
 
 ```python
-from coutils import MyDrive
+from calabar import MyDrive
 
 drive = MyDrive('/drive')
 drive.mount()
@@ -50,7 +50,7 @@ so don't forget to add 'My Drive' to the file path.
 Export file from Colab to Drive, for example, training logs, model checkpoints, etc:
 
 ```python
-from coutils import SaveToDrive
+from calabar import SaveToDrive
 
 export = SaveToDrive()
 
@@ -65,13 +65,13 @@ export.to_drive('another_file')
 Currently `tar`/`tar.gz` and `zip` archives extracting are supported.
 
 ```python
-from coutils import untar
+from calabar import untar
 
 untar('data.tar', 'to_destination')
 ```
 
 ```python
-from coutils import unzip
+from calabar import unzip
 
 unzip('data.zip', 'to_destination')
 ```
@@ -83,12 +83,12 @@ unzip('data.zip', 'to_destination')
 
 **SECURITY WARNING:** Continuous sending of emails (for example, sending email after each epoch) requires storing your 
 Gmail account password in memory, allowing you not to relogin to SMTP server each time, when you want to send an email.
-BUT, CoUtils uses secure TLS connection. Anyway, if you feel unsafe because of "less secure appps" and using
+BUT, Calabar uses secure TLS connection. Anyway, if you feel unsafe because of "less secure appps" and using
 SMTP server, or you just don't like it, you may not use it or use another "less secured" account
 (with "less secure apps” option on) and send emails to your primary account, as shown below:
 
 ```python
-from coutils import Email
+from calabar import Email
 
 from_addr = 'johndoe@gmail.com'  # email with "allow less secure", this account's SMTP server will be used as a sender
 to_addrs = ['another@gmail.com',]  # a list of receivers
@@ -107,13 +107,13 @@ email.send(msg_subject, msg_body)
 ```python
 # Update torch and torchvision to the latest version
 
-from coutils import upgrade_pytorch
+from calabar import upgrade_pytorch
 
 upgrade_pytorch()
 ```
 
 ```python
-from coutils.utils import *
+from calabar.utils import *
 
 # Print system info, gpu, and installed pytorch version
 
@@ -140,11 +140,11 @@ print(get_distro_descr())
 
 ## Complete Usage Example
 
-The following example shows up how to integrate CoUtils with your training pipeline.
+The following example shows up how to integrate Calabar with your training pipeline.
 
 ```python
-from coutils import MyDrive, SaveToDrive, untar, unzip, Email
-from coutils.utils import *
+from calabar import MyDrive, SaveToDrive, untar, unzip, Email
+from calabar.utils import *
 
 
 # Authorize to Drive to allow mounting

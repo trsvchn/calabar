@@ -1,6 +1,6 @@
 import pytest
 from conftest import *
-from coutils.install import pip_install, upgrade_pytorch
+from calabar.install import pip_install, upgrade_pytorch
 
 
 @pytest.fixture
