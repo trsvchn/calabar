@@ -1,6 +1,6 @@
 from os.path import exists
 import pytest
-from conftest import *
+from ..conftest import *
 from calabar import utils
 
 

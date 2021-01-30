@@ -1,5 +1,5 @@
 import pytest
-from conftest import *
+from ..conftest import *
 from calabar.install import pip_install, upgrade_pytorch
 
 

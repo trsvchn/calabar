@@ -1,10 +1,9 @@
 # Calabar
 
+[![CI](https://github.com/trsvchn/calabar/workflows/CI/badge.svg)](https://github.com/trsvchn/calabar/actions)
+[![codecov](https://codecov.io/gh/trsvchn/calabar/branch/main/graph/badge.svg)](https://codecov.io/gh/trsvchn/calabar)
+
 Useful tools to make Colab more handy.
-
-
-[![travis](https://travis-ci.org/trsvchn/calabar.svg?branch=master)](https://travis-ci.org/trsvchn/calabar)
-[![codecov](https://codecov.io/gh/trsvchn/calabar/branch/master/graph/badge.svg)](https://codecov.io/gh/trsvchn/calabar)
 
 ## Contents
 

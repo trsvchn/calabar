@@ -1,7 +1,5 @@
 import pytest
-from conftest import *
-import sys
-
+from ..conftest import *
 from calabar.driveutils import MyDrive, SaveToDrive
 
 

@@ -1,7 +1,7 @@
-import pytest
-from conftest import *
-from calabar.notifications import Email
 import getpass
+import pytest
+from ..conftest import *
+from calabar.notifications import Email
 
 
 @pytest.fixture
@@ -15,7 +15,7 @@ def email(monkeypatch):
 
 
 def test_default_email(email):
-        assert email.from_addr == FROM_ADDR
-        assert isinstance(email.from_addr, str)
-        assert email.to_addrs == TO_ADDRS
-        assert isinstance(email.to_addrs, list)
+    assert email.from_addr == FROM_ADDR
+    assert isinstance(email.from_addr, str)
+    assert email.to_addrs == TO_ADDRS
+    assert isinstance(email.to_addrs, list)
