@@ -1,10 +1,13 @@
 from os.path import exists
+
 import pytest
-from ..conftest import *
+
 from calabar import utils
 
+from ..conftest import *
 
-@pytest.mark.skipif(not exists(NVIDIA_PATH), reason='Requires NVIDIA driver')
+
+@pytest.mark.skipif(not exists(NVIDIA_PATH), reason="Requires NVIDIA driver")
 def test_get_gpu_usage_output():
     test_out = utils.get_gpu_usage()
     assert test_out
