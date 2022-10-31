@@ -2,12 +2,12 @@
 Notifications module. Currently provides only email notifications.
 """
 
-import os
 import getpass
+import os
 import smtplib
-from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 
 class Email:
@@ -31,11 +31,11 @@ class Email:
         https://www.google.com/settings/security/lesssecureapps
     """
 
-    def __init__(self, from_addr: str, to_addrs: list, host: str = 'smtp.gmail.com', port: int = 587):
+    def __init__(self, from_addr: str, to_addrs: list, host: str = "smtp.gmail.com", port: int = 587):
         r"""Default init"""
         self.from_addr = from_addr
         self.to_addrs = to_addrs
-        self.pswd = getpass.getpass(f'Password ({self.from_addr}): ')
+        self.pswd = getpass.getpass(f"Password ({self.from_addr}): ")
         self.host = host
         self.port = port
 
@@ -55,13 +55,13 @@ class Email:
         """
 
         msg = MIMEMultipart()
-        msg['From'] = self.from_addr
-        msg['To'] = ','.join(self.to_addrs)
-        msg['Subject'] = msg_subject
-        msg.attach(MIMEText(msg_body, 'plain'))
+        msg["From"] = self.from_addr
+        msg["To"] = ",".join(self.to_addrs)
+        msg["Subject"] = msg_subject
+        msg.attach(MIMEText(msg_body, "plain"))
 
         if attachment:
-            _attachment = open(attachment, 'rb').read()
+            _attachment = open(attachment, "rb").read()
             image = MIMEImage(_attachment, name=os.path.basename(attachment))
             msg.attach(image)
 
