@@ -1,19 +1,20 @@
 # -*- coding: utf-8 -*-
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
-
-with open('README.md') as f:
+with open("README.md") as f:
     README = f.read()
 
 
-NAME = 'calabar'
-DESCRIPTION = 'Makes Google Colab more friendly.'
-LICENSE = 'Apache-2.0'
-REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.0.1'
-REQUIRED = ['pydrive', ]
-EXCLUDE = ('tests', 'docs', 'notebooks')
+NAME = "calabar"
+DESCRIPTION = "Makes Google Colab more friendly."
+LICENSE = "Apache-2.0"
+REQUIRES_PYTHON = ">=3.6.0"
+VERSION = "0.0.1"
+REQUIRED = [
+    "pydrive",
+]
+EXCLUDE = ("tests", "docs", "notebooks")
 
 setup(
     name=NAME,

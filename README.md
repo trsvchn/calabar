@@ -104,14 +104,6 @@ email.send(msg_subject, msg_body)
 ### Misc
 
 ```python
-# Update torch and torchvision to the latest version
-
-from calabar import upgrade_pytorch
-
-upgrade_pytorch()
-```
-
-```python
 from calabar.utils import *
 
 # Print system info, gpu, and installed pytorch version
