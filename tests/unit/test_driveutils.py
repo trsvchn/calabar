@@ -1,6 +1,8 @@
 import pytest
-from ..conftest import *
+
 from calabar.driveutils import MyDrive, SaveToDrive
+
+from ..conftest import *
 
 
 @pytest.fixture
@@ -16,7 +18,7 @@ def savetodrive():
 
 
 def test_init_mountcopy(mountcopy):
-    assert mountcopy.mounting_point == '/drive'
+    assert mountcopy.mounting_point == "/drive"
 
 
 def test_init_savetodrive(savetodrive):

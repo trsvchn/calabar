@@ -2,17 +2,14 @@ r"""
 Performs mounting, copying and saving files to Google Drive.
 """
 
+import errno
 import os
 import shutil
-import errno
 
-from google.colab import auth
-from google.colab import drive
-
+from google.colab import auth, drive
+from oauth2client.client import GoogleCredentials
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-
-from oauth2client.client import GoogleCredentials
 
 
 class MyDrive:
@@ -26,7 +23,7 @@ class MyDrive:
         By default mounts to `/drive`
     """
 
-    def __init__(self, mounting_point: str = '/drive'):
+    def __init__(self, mounting_point: str = "/drive"):
         r"""
         Basic init.
 
@@ -70,13 +67,13 @@ class MyDrive:
 
         try:
             shutil.copytree(source_path, dest)
-            print(f'Directory {source_path} copied to {dest} successfully')
+            print(f"Directory {source_path} copied to {dest} successfully")
         except OSError as e:
             if e.errno == errno.ENOTDIR:
                 shutil.copy(source_path, dest)
-                print(f'File {source_path} copied to {dest} successfully')
+                print(f"File {source_path} copied to {dest} successfully")
             else:
-                print(f'Failed to copy directory. Error: {e}')
+                print(f"Failed to copy directory. Error: {e}")
 
     def pipeline(self, *args, **kwargs):
         r"""Place where custom pipeline is defined."""
@@ -113,14 +110,14 @@ class SaveToDrive:
         """
 
         file_name = os.path.basename(file)
-        print(f'Uploading {file_name}...')
+        print(f"Uploading {file_name}...")
         auth.authenticate_user()
         gauth = GoogleAuth()
         gauth.credentials = GoogleCredentials.get_application_default()
         self.drive = GoogleDrive(gauth)
 
-        uploaded = self.drive.CreateFile({'title': f'{file_name}'})
-        uploaded.SetContentFile(f'{file}')
+        uploaded = self.drive.CreateFile({"title": f"{file_name}"})
+        uploaded.SetContentFile(f"{file}")
         uploaded.Upload()
-        new_file_id = uploaded.get('id')
-        print(f'{file_name} Successfully Uploaded. File ID: {new_file_id}')  # print some info
+        new_file_id = uploaded.get("id")
+        print(f"{file_name} Successfully Uploaded. File ID: {new_file_id}")  # print some info

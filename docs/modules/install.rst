@@ -13,10 +13,3 @@ calabar.install
 
 .. autoclass:: Install
     :members:
-
-
-:hidden:`InstallPyTorch`
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: InstallPyTorch
-    :members:

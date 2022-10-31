@@ -1,16 +1,21 @@
 import getpass
+
 import pytest
-from ..conftest import *
+
 from calabar.notifications import Email
+
+from ..conftest import *
 
 
 @pytest.fixture
 def email(monkeypatch):
     """Default init"""
+
     def input_patch(_):
-        return 'foobar'
+        return "foobar"
+
     with monkeypatch.context() as m:
-        m.setattr(getpass, 'getpass', input_patch)
+        m.setattr(getpass, "getpass", input_patch)
         return Email(FROM_ADDR, TO_ADDRS)
 
 
