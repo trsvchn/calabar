@@ -8,14 +8,14 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        py: [3.7]
+        py: [3.10]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Setup Python ${{ matrix.py }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.py }}
 
@@ -33,6 +33,6 @@ jobs:
           pytest -vvv --color=yes --cov=calabar --cov-append tests/unit
 
       - name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2
         with:
           fail_ci_if_error: true
