@@ -1,0 +1,21 @@
+[project]
+name = "calabar"
+description = "Makes Google Colab more friendly."
+readme = {file = "README.md", content-type="text/markdown"}
+license = {file = "LICENSE"}
+authors = [{name = "Taras Savchyn", email="trsvchn@gmail.com"}]
+requires-python = ">=3.6"
+dependencies = [
+    "pydrive",
+]
+dynamic = ["version"]
+
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+zip-safe = false
+include-package-data = false
+packages = ["calabar"]
+dynamic.version.attr = "calabar.__version__"
