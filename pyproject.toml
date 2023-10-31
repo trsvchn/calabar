@@ -1,6 +1,6 @@
 [project]
 name = "calabar"
-description = "Makes Google Colab more friendly."
+description = "Collection of Useful Tools for Google Colab."
 readme = {file = "README.md", content-type="text/markdown"}
 license = {file = "LICENSE"}
 authors = [{name = "Taras Savchyn", email="trsvchn@gmail.com"}]
