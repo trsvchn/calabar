@@ -1,7 +1,8 @@
 # Calabar
 
-[![CI](https://github.com/trsvchn/calabar/workflows/CI/badge.svg)](https://github.com/trsvchn/calabar/actions)
+[![CI](https://github.com/trsvchn/calabar/actions/workflows/tests.yml/badge.svg)](https://github.com/trsvchn/calabar/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/trsvchn/calabar/branch/main/graph/badge.svg)](https://codecov.io/gh/trsvchn/calabar)
+[![CI](https://github.com/trsvchn/calabar/actions/workflows/docs.yml/badge.svg)](https://github.com/trsvchn/calabar/actions/workflows/docs.yml)
 
 Useful tools to make Colab more handy.
 
