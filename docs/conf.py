@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.abspath(".."))
 # -- Project information -----------------------------------------------------
 
 project = "calabar"
-copyright = "2018, Taras Savchyn"
+copyright = "2018-2023, Taras Savchyn"
 author = "Taras Savchyn"
 
 # The short X.Y version
@@ -89,8 +89,8 @@ autodoc_mock_imports = ["google.colab"]
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-# html_theme = 'alabaster'
-html_theme = "sphinx_rtd_theme"
+html_theme = 'alabaster'
+# html_theme = "sphinx_rtd_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
