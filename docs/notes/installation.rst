@@ -13,5 +13,4 @@ Dev install
 
 Run this command:
 
-``pip install requirements.txt``
-
+``pip install -e .``

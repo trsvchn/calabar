@@ -19,7 +19,7 @@ Useful tools to make Colab more handy.
 ## Installation
 
 ```
-!pip install git+https://github.com/trsvchn/calabar.git
+!pip install calabar
 ```
 
 ## Usage
