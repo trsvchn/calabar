@@ -1,5 +1,6 @@
 # Calabar
 
+[![Downloads](https://static.pepy.tech/badge/calabar)](https://pepy.tech/project/calabar)
 [![CI](https://github.com/trsvchn/calabar/actions/workflows/tests.yml/badge.svg)](https://github.com/trsvchn/calabar/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/trsvchn/calabar/branch/main/graph/badge.svg)](https://codecov.io/gh/trsvchn/calabar)
 [![CI](https://github.com/trsvchn/calabar/actions/workflows/docs.yml/badge.svg)](https://github.com/trsvchn/calabar/actions/workflows/docs.yml)
